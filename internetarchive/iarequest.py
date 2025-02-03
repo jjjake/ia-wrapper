@@ -412,7 +412,7 @@ def prepare_metadata(metadata, source_metadata=None, append=False, append_list=F
     indexed_keys = {}
     for key in metadata:
         # Convert number values to strings!
-        if isinstance(metadata[key], (six.integer_types, float, complex)):
+        if isinstance(metadata[key], (six.integer_types, float, complex)) and not isinstance(metdata[key], bool):
             metadata[key] = str(metadata[key])
         if get_index(key) is None:
             continue
